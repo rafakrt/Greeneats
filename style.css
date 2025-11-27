@@ -1,0 +1,349 @@
+:root {
+  --green-main: #2e7d32;
+  --green-light: #e8f5e9;
+  --green-dark: #1b5e20;
+  --gray-border: #dde3e8;
+  --gray-bg: #f6f7f9;
+  --text-main: #222;
+  --text-muted: #555;
+  --danger-bg: #f8d7da;
+  --danger-text: #721c24;
+  --success-bg: #d4edda;
+  --success-text: #155724;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--gray-bg);
+  color: var(--text-main);
+}
+
+/* TOPO */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--gray-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--green-main);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.app-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto 32px;
+  padding: 0 16px;
+}
+
+.hero {
+  background: linear-gradient(120deg, var(--green-main), var(--green-dark));
+  color: #fff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.hero h2 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* GRID DE CARDS */
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD GENÉRICO */
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 20px 20px;
+  border: 1px solid var(--gray-border);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.06);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+
+.card-subtitle {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.card-info {
+  background: #ffffff;
+}
+
+/* FORMULÁRIO */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group label {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--gray-border);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  background-color: #fff;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--green-main);
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.15);
+}
+
+button[type="submit"],
+.btn-secondary {
+  margin-top: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--green-main);
+  color: #fff;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+button[type="submit"]:hover,
+.btn-secondary:hover {
+  background: var(--green-dark);
+}
+
+button[type="submit"]:active,
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+button[type="submit"]:disabled {
+  background: #c8d6cc;
+  cursor: wait;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--green-main);
+  border: 1px solid var(--green-main);
+  margin-top: 0;
+}
+
+/* RESULTADO */
+
+.resultado {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.resultado.ok {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid rgba(21, 87, 36, 0.4);
+}
+
+.resultado.erro {
+  background-color: var(--danger-bg);
+  color: var(--danger-text);
+  border: 1px solid rgba(114, 28, 36, 0.4);
+}
+
+.escondido {
+  display: none;
+}
+
+/* CARD DE REGRAS */
+
+.rules-list {
+  margin: 10px 0 14px;
+  padding-left: 18px;
+  font-size: 0.92rem;
+}
+
+.rules-list li {
+  margin-bottom: 4px;
+}
+
+.example-box {
+  background: var(--green-light);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.example-title {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+pre {
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+code {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+.hint {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+/* LISTAGEM DE PRODUTOS */
+
+.card-list {
+  margin-top: 24px;
+}
+
+.card-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.card-list-header h3 {
+  margin-bottom: 4px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.produtos-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.produtos-table thead {
+  background: var(--green-light);
+}
+
+.produtos-table th,
+.produtos-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--gray-border);
+  text-align: left;
+}
+
+.produtos-table th {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.produtos-table tr:last-child td {
+  border-bottom: none;
+}
+
+.produtos-table .empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.tag-categoria {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.lista-status {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+/* RODAPÉ */
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  padding: 12px 8px 16px;
+  border-top: 1px solid var(--gray-border);
+  background: #ffffff;
+}
